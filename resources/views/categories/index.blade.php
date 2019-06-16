@@ -4,6 +4,7 @@
 <div class="d-flex justify-content-end">
   <a href="{{ route('categories.create') }}" class="btn btn-success float-right my-2">Add Categories</a>
 </div>
+
 <div class="card card-default">
   <div class="card card-header">Categories</div>
   <div class="card-body">

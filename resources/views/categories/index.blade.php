@@ -8,7 +8,8 @@
 <div class="card card-default">
   <div class="card card-header">Categories</div>
   <div class="card-body">
-    <table class="table">
+@if($categories->count() > 0)
+<table class="table">
       <thead>
         <th>Name</th>
       </thead>
@@ -30,9 +31,9 @@
       </tbody>
     </table>
 
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <form action="" method="POST" id="deleteCategoryForm">
+      <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <form action="" method="POST" id="deleteCategoryForm">
 
           @csrf
           @method('DELETE')
@@ -56,6 +57,9 @@
             </div>
         </form>
       </div>
+@else
+<h3 class="text-center">No Categories yet.</h3>
+@endif
     </div>
 
   </div>

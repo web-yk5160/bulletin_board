@@ -8,11 +8,13 @@
 <div class="card card-default">
   <div class="card-header">Posts</div>
   <div class="card-body">
-    @if($posts->count() > 0)
-    <table class="table">
+   @if($posts->count() > 0)
+   <table class="table">
       <thead>
         <th>Image</th>
         <th>Title</th>
+        <th></th>
+        <th></th>
       </thead>
 
       <tbody>
@@ -42,10 +44,10 @@
         </tr>
         @endforeach
       </tbody>
-    </table>
-    @else
-      <h3 class="text-center">No Post Yet</h3>
-    @endif
+  </table>
+  @else
+    <h3 class="text-center">No Post yet</h3>
+  @endif
   </div>
 </div>
 @endsection

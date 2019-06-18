@@ -28,7 +28,9 @@
             {{ $post->title }}
           </td>
           <td>
-          {{ $post->category->name }}
+            <a href="{{ route('categories.edit', $post->category->id) }}">
+              {{ $post->category->name }}
+            </a>
           </td>
 
           @if($post->trashed())

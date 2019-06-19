@@ -22,7 +22,7 @@
         @foreach($posts as $post)
         <tr>
           <td>
-            <img src="storage/{{ $post->image }}" width="60px" height="60px" alt="">
+            <img src="storage/{{ $post->image }}" width="120px" height="60px" alt="">
           </td>
           <td>
             {{ $post->title }}

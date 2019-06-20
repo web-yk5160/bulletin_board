@@ -19,6 +19,7 @@ class Post extends Model
      *
      * @return void
      */
+
     public function deleteImage()
     {
         Storage::delete($this->image);
@@ -39,6 +40,7 @@ class Post extends Model
      *
      * @return boot
      */
+
     public function hasTag($tagId)
     {
         return in_array($tagId, $this->tags->pluck('id')->toArray());
@@ -47,5 +49,16 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function scopeSearched($query)
+    {
+        $search = request()->query('search');
+
+        if (!$search){
+            return $query;
+        }
+
+        return $query->where('title', 'LIKE', "%{$search}%");
     }
 }
